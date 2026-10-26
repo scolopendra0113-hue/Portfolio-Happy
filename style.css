@@ -1,0 +1,1007 @@
+/* Обнуление базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Общие стили для кнопок и логотипов */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.btn-black {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.btn-black:hover {
+    background-color: #333333;
+}
+
+.btn-dark {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: opacity 0.2s ease;
+}
+
+.btn-dark:hover {
+    opacity: 0.9;
+}
+
+/* --- ШАПКА САЙТА (HEADER) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.nav {
+    display: none; /* Скрыто на мобильных устройствах */
+    gap: 30px;
+}
+
+.nav-link {
+    color: #666666;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #111111;
+}
+
+.btn-header {
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
+/* --- ОСНОВНОЙ БЛОК (HERO SECTION) --- */
+.hero {
+    padding: 60px 4%;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column; /* Сначала контент идет в одну колонку (Mobile) */
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+}
+
+.hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    color: #111111;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+/* --- МОКАП ТЕЛЕФОНА --- */
+.hero-mockup {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+/* Имитация корпуса iPhone */
+.phone-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 200%; /* Пропорции экрана смартфона */
+    border: 12px solid #222222;
+    border-radius: 40px;
+    background-color: #000;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* Картинка внутри экрана */
+.phone-screen-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- МЕДИА-ЗАПРОСЫ (ДЛЯ ДЕСКТОПА) --- */
+@media (min-width: 768px) {
+    .hero-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .hero-actions .btn-black,
+    .hero-actions .btn-dark {
+        flex: 1;
+        max-width: 180px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        padding: 25px 8%;
+    }
+    
+    .nav {
+        display: flex; /* Показываем меню на десктопе */
+    }
+
+    .hero {
+        padding: 80px 8%;
+    }
+
+    .hero-container {
+        flex-direction: row; /* Разворачиваем в две колонки */
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .hero-actions {
+        justify-content: flex-start;
+    }
+
+    .hero-mockup {
+        max-width: 380px;
+    }
+}
+
+/* --- СЕКЦИЯ ПРЕИМУЩЕСТВ (FEATURES GRID) --- */
+.features-section {
+    background-color: #1a1a1a; /* Контрастный темный фон под макет */
+    color: #ffffff;
+    padding: 80px 4%;
+    margin-top: -200px;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка секции преимуществ */
+.features-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #888888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.features-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+/* Сетка CSS Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Стилизация карточки */
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Верхняя серая зона с телефоном */
+.card-image-area {
+    background-color: #f4f4f4;
+    height: 260px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+/* Квадратные иконки на стыке блоков */
+.card-icon {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.icon-text {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Мокап смартфона */
+.phone-mockup {
+    width: 150px;
+    height: 240px;
+    background-color: #000000;
+    border: 6px solid #000000;
+    border-bottom: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Верхняя челка iPhone */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 12px;
+    background-color: #000000;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    z-index: 5;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.phone-screen.bg-dark {
+    background-color: #111111;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Нижняя текстовая область */
+.card-content {
+    padding: 45px 25px 35px 25px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.card-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666666;
+}
+
+/* --- Модификаторы цветов для каждой карточки --- */
+.color-blue .card-icon { background-color: #2f80ed; }
+.color-blue .card-title { color: #2f80ed; }
+
+.color-orange-red .card-icon { background-color: #ff4c3b; }
+.color-orange-red .card-title { color: #ff4c3b; }
+
+.color-gold .card-icon { background-color: #f2994a; }
+.color-gold .card-title { color: #f2994a; }
+
+.color-pink .card-icon { background-color: #e040fb; }
+.color-pink .card-title { color: #e040fb; }
+
+.color-cyan .card-icon { background-color: #00bcd4; }
+.color-cyan .card-title { color: #00bcd4; }
+
+.color-purple .card-icon { background-color: #9b51e0; }
+.color-purple .card-title { color: #9b51e0; }
+
+/* --- Медиа-запросы (Адаптив) --- */
+@media (min-width: 576px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+}
+
+@media (min-width: 992px) {
+    .features-header {
+        margin-bottom: 70px;
+    }
+    .features-title {
+        font-size: 40px;
+    }
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки на десктопе */
+        gap: 35px;
+    }
+}
+
+/* --- СЕКЦИЯ СТАТИСТИКИ (STATS SECTION) --- */
+.stats-section {
+    background-color: #ff4c3b; /* Фирменный кораллово-красный фон из макета */
+    color: #ffffff;
+    padding: 80px 4%;
+    text-align: center;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Вертикальный стек по умолчанию для мобильных */
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px; /* Отступы между счетчиками на мобильных */
+}
+
+/* Контейнер отдельного счетчика */
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Большие цифры */
+.stat-number {
+    font-size: clamp(64px, 8vw, 96px); /* Адаптивный размер шрифта в зависимости от экрана */
+    font-weight: 400; /* Соответствует легкому начертанию на макете */
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+}
+
+/* Подписи под цифрами */
+.stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px; /* Разреженный текст капсом */
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8); /* Слегка прозрачный белый для второстепенного текста */
+}
+
+/* --- АДАПТИВ ДЛЯ БОЛЬШИХ ЭКРАНОВ --- */
+@media (min-width: 768px) {
+    .stats-section {
+        padding: 100px 4%;
+    }
+    
+    .stats-container {
+        flex-direction: row; /* Выстраиваем счетчики в один ряд на десктопе */
+        gap: 20px;
+    }
+    
+    .stat-item {
+        width: 33.33%; /* Равномерное распределение по ширине */
+    }
+}
+
+/* --- СЕКЦИЯ КОНТЕНТНЫХ БЛОКОВ (CONTENT ROWS) --- */
+.content-rows-section {
+    background-color: #ffffff; /* Белый фон как на макете */
+    color: #333333;
+    padding: 60px 4%;
+    overflow: hidden;
+}
+
+.rows-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Отступ между двумя большими блоками */
+}
+
+/* Общие стили для одного ряда */
+.content-row {
+    display: flex;
+    flex-direction: column; /* На мобильных выстраиваем вертикально */
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Текстовая колонка */
+.row-text {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.row-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #888888;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.row-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #111111;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.row-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666666;
+}
+
+/* Колонка с изображением смартфона */
+.row-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Обрезанный снизу мокап смартфона по макету */
+.phone-mockup-half {
+    width: 280px;
+    height: 380px; /* Ограничиваем высоту, чтобы скрыть нижнюю часть */
+    border: 10px solid #222222;
+    border-bottom: none; /* Убираем нижнюю рамку */
+    border-top-left-radius: 36px;
+    border-top-right-radius: 36px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Челка iPhone */
+.phone-mockup-half::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 18px;
+    background-color: #222222;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 5;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- АДАПТИВ ДЛЯ БОЛЬШИХ ЭКРАНОВ --- */
+@media (min-width: 992px) {
+    .content-rows-section {
+        padding: 100px 4%;
+    }
+
+    .rows-container {
+        gap: 0px; /* На десктопе отступы регулируются высотой и маргинами */
+    }
+
+    .content-row {
+        flex-direction: row; /* Две колонки на десктопе */
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+
+    /* Шахматный порядок: разворачиваем колонки для рядов с классом row-reverse */
+    .content-row.row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .row-title {
+        font-size: 36px;
+    }
+
+    .phone-mockup-half {
+        width: 320px;
+        height: 440px; /* Увеличиваем мокап на больших экранах */
+    }
+}
+
+/* --- СЕКЦИЯ ТЕМНОГО РЕЖИМА (DARK MODE SECTION) --- */
+.dark-mode-section {
+    background-color: #222222; /* Насыщенный темный фон из макета */
+    color: #ffffff;
+    padding: 80px 4% 60px 4%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.dark-mode-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Верхний текстовый блок */
+.dark-mode-header {
+    max-width: 580px;
+    margin-bottom: 50px;
+}
+
+.dark-mode-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #888888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.dark-mode-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.dark-mode-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #aaaaaa; /* Приглушенный текст для темного фона */
+}
+
+/* Зона смартфона с белой разделительной линией снизу */
+.dark-mode-display {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* Линия-подставка под телефоном */
+    margin-bottom: 40px;
+}
+
+/* Центральный мокап телефона (уходит в пол) */
+.phone-mockup-center {
+    width: 290px;
+    height: 360px; /* Фиксированная высота для обрезки нижней части */
+    border: 12px solid #333333;
+    border-bottom: none;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    background-color: #000000;
+    margin-bottom: -2px; /* Прижимает рамку вплотную к бордеру линии */
+}
+
+/* Челка для мокапа */
+.phone-mockup-center::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 18px;
+    background-color: #333333;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 5;
+}
+
+/* Переключатели под линией */
+.mode-toggle-area {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Стили кнопок выбора режима */
+.mode-btn {
+    background: none;
+    border: none;
+    color: #666666; /* Неактивные кнопки приглушены */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.mode-btn i {
+    font-size: 20px;
+}
+
+.mode-btn span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+/* Активное состояние кнопки переключателя */
+.mode-btn.active, 
+.mode-btn:hover {
+    color: #ffffff; /* Белое свечение активного режима */
+}
+
+/* --- АДАПТИВ ДЛЯ ДЕСКТОПА --- */
+@media (min-width: 992px) {
+    .dark-mode-section {
+        padding: 100px 4% 80px 4%;
+    }
+
+    .dark-mode-title {
+        font-size: 40px;
+    }
+
+    .phone-mockup-center {
+        width: 340px;
+        height: 420px; /* Увеличенный масштаб телефона на десктопе */
+    }
+}
+
+/* --- ОБЩИЕ СТИЛИ ДЛЯ НОВЫХ СЕКЦИЙ --- */
+.site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.section-header-center {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.section-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #888888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #111111;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.section-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666666;
+}
+
+/* --- ТАРИФЫ (PRICING) --- */
+.pricing-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.price-card {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-type {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.price-value {
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 15px;
+    position: relative;
+    letter-spacing: -2px;
+}
+
+.price-value span {
+    font-size: 32px;
+    font-weight: 500;
+    vertical-align: super;
+    margin-right: 2px;
+}
+
+.price-period {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #888888;
+    margin-bottom: 30px;
+}
+
+.price-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 160px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+}
+
+.price-btn:hover {
+    opacity: 0.9;
+}
+
+/* Модификаторы стилей тарифов */
+.pricing-blue .price-type, .pricing-blue .price-value { color: #2f80ed; }
+.pricing-blue .price-btn { background-color: #2f80ed; }
+
+.pricing-red .price-type, .pricing-red .price-value { color: #ff4c3b; }
+.pricing-red .price-btn { background-color: #ff4c3b; }
+
+.pricing-orange .price-type, .pricing-orange .price-value { color: #f2994a; }
+.pricing-orange .price-btn { background-color: #f2994a; }
+
+
+/* --- ОТЗЫВЫ (TESTIMONIALS) --- */
+.testimonials-section {
+    background-color: #f9f9f9; /* Светло-серый фон секции */
+    padding: 80px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card .review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 25px;
+    font-style: normal;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111111;
+    font-style: normal;
+}
+
+.author-company {
+    font-size: 12px;
+    color: #888888;
+}
+
+
+/* --- СКАЧИВАНИЕ (DOWNLOAD) --- */
+.download-section {
+    background-color: #ffffff;
+    padding: 80px 0 100px 0;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.app-store-btn {
+    display: inline-block;
+    width: 145px;
+    height: 43px;
+    transition: transform 0.2s ease;
+}
+
+.app-store-btn:hover {
+    transform: scale(1.03);
+}
+
+
+/* --- АДАПТИВ ДЛЯ БОЛЬШИХ ЭКРАНОВ (ПЛАНШЕТЫ И ДЕСКТОПЫ) --- */
+@media (min-width: 768px) {
+    .pricing-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки в ряд на десктопе */
+        gap: 25px;
+    }
+    
+    .section-title {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .pricing-grid, 
+    .testimonials-grid {
+        gap: 35px;
+    }
+    .pricing-section,
+    .testimonials-section,
+    .download-section {
+        padding: 100px 0;
+    }
+}
+
