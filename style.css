@@ -452,7 +452,7 @@ body {
 .content-rows-section {
     background-color: #ffffff; /* Белый фон как на макете */
     color: #333333;
-    padding: 60px 4%;
+    /* padding: 60px 4%; */
     overflow: hidden;
 }
 
@@ -511,55 +511,14 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-}
-
-/* Обрезанный снизу мокап смартфона по макету */
-.phone-mockup-half {
-    width: 280px;
-    height: 380px; /* Ограничиваем высоту, чтобы скрыть нижнюю часть */
-    border: 10px solid #222222;
-    border-bottom: none; /* Убираем нижнюю рамку */
-    border-top-left-radius: 36px;
-    border-top-right-radius: 36px;
+    height: 544px;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* Челка iPhone */
-.phone-mockup-half::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90px;
-    height: 18px;
-    background-color: #222222;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    z-index: 5;
-}
-
-.phone-screen {
-    width: 100%;
-    height: 100%;
-}
-
-.phone-screen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 /* --- АДАПТИВ ДЛЯ БОЛЬШИХ ЭКРАНОВ --- */
 @media (min-width: 992px) {
-    .content-rows-section {
-        padding: 100px 4%;
-    }
-
     .rows-container {
         gap: 0px; /* На десктопе отступы регулируются высотой и маргинами */
     }
@@ -567,7 +526,6 @@ body {
     .content-row {
         flex-direction: row; /* Две колонки на десктопе */
         justify-content: space-between;
-        padding: 40px 0;
     }
 
     /* Шахматный порядок: разворачиваем колонки для рядов с классом row-reverse */
@@ -578,10 +536,12 @@ body {
     .row-title {
         font-size: 36px;
     }
+}
 
-    .phone-mockup-half {
-        width: 320px;
-        height: 440px; /* Увеличиваем мокап на больших экранах */
+@media (max-width: 768px) {
+    .row-media {
+    max-height: 544px;
+    overflow: hidden;
     }
 }
 
@@ -589,7 +549,7 @@ body {
 .dark-mode-section {
     background-color: #222222; /* Насыщенный темный фон из макета */
     color: #ffffff;
-    padding: 80px 4% 60px 4%;
+    /* padding: 80px 4% 60px 4%; */
     text-align: center;
     overflow: hidden;
 }
